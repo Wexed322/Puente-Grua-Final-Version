@@ -10,10 +10,14 @@ public class OrbitingCamera : MonoBehaviour
     public Vector3 mouseDelta = Vector3.zero;
     public Vector3 amount = Vector3.zero;
     public Vector3 camPos = Vector3.zero;
+
+    public Camera componentCamera;
+    public bool activado;
     void Start()
     {
+        componentCamera = this.GetComponent<Camera>();
+        componentCamera.enabled = false;
         amount.z = 10;
-        Invoke("HideCamera", 1);
     }
     private void LateUpdate()
     {
@@ -36,8 +40,10 @@ public class OrbitingCamera : MonoBehaviour
             transform.LookAt(Tarjet.transform);
         }
     }
-    public void HideCamera() 
+
+    public void activateDesactivateCamera() 
     {
-        this.gameObject.SetActive(false);
+        activado = !activado;
+        componentCamera.enabled = activado;
     }
 }

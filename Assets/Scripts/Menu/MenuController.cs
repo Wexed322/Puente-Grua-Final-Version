@@ -26,6 +26,13 @@ public class MenuController : MonoBehaviour
     {
         startMenuController();
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P)) //HASTA ACABAR EL OBSERVE DE LOS OTROS
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
     public void BotonInicioMenu() 
     {
         GameManager.GameManagerInstance.loadNextScene();

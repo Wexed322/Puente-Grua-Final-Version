@@ -9,7 +9,7 @@ public class BothInteractuable : Interactuables
     {
         base.Start();
         myType = TypeInteractionObject.both;
-        prefabSecondCamera = FindObjectOfType<OrbitingCamera>();
+        //prefabSecondCamera = FindObjectOfType<OrbitingCamera>();
     }
 
     void Update()
@@ -18,7 +18,12 @@ public class BothInteractuable : Interactuables
     }
     public override void FocusCamera()
     {
-        prefabSecondCamera.gameObject.SetActive(true);
+        prefabSecondCamera.activateDesactivateCamera();
         prefabSecondCamera.Tarjet = this.gameObject.transform;
+    }
+
+    public override void Drop()
+    {
+        this.transform.SetParent(null);
     }
 }

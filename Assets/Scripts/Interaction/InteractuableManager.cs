@@ -19,19 +19,5 @@ public class InteractuableManager : MonoBehaviour
             indicesAveriados.Add(item.id);
         }
     }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E)) 
-        {
-            ConcuerdaConBaseDatos(prueba);
-        }
-    }
 
-    public void ConcuerdaConBaseDatos(string input) 
-    {
-        for (int i = 0; i < paraSerAnotado.Count; i++)
-        {
-            //Debug.Log(excelReader.palabrasClave2[paraSerAnotado[i]].Length);
-        }
-    }
 }

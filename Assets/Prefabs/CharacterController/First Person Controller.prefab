@@ -425,7 +425,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.75
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -0.37, y: 0, z: 0}
 --- !u!114 &5030266536398418623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -802,6 +802,7 @@ MonoBehaviour:
   character: {fileID: 7652557641514368917}
   sensitivity: 2
   smoothing: 1.5
+  offsetConCheckList: 0
 --- !u!114 &7757673383003346415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -862,7 +863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   distanceThreshold: 0.15
-  isGrounded: 1
+  isGrounded: 0
 --- !u!1 &7654340635403970455
 GameObject:
   m_ObjectHideFlags: 0
@@ -957,9 +958,10 @@ GameObject:
   - component: {fileID: 7709521486204232987}
   - component: {fileID: 7756822152449394081}
   - component: {fileID: 7758414732032491609}
+  - component: {fileID: 7255277974183106278}
   m_Layer: 0
   m_Name: First Person Controller
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1043,6 +1045,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpStrength: 2
   groundCheck: {fileID: 7758402327358438717}
+--- !u!114 &7255277974183106278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7654966229281252413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9279648e01c044c9f9fd68e7404a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cuerda: {fileID: 0}
+  cuerda2: {fileID: 0}
+  minLength: 1.5
+  maxLength: 13
+  speedCuerda: 0
+  MaxspeedCuerda: 0
 --- !u!1 &7655462012012435748
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,11 +5,14 @@ using UnityEngine;
 public class ObserveInteractuable : Interactuables
 {
     public OrbitingCamera prefabSecondCamera;
+
+
+    public AccesoriosData[] listaDeAccesorios;
     public new void Start()
     {
         base.Start();
         myType = TypeInteractionObject.observable;
-        prefabSecondCamera = FindObjectOfType<OrbitingCamera>();
+        //prefabSecondCamera = FindObjectOfType<OrbitingCamera>();
     }
 
     void Update()
@@ -19,13 +22,13 @@ public class ObserveInteractuable : Interactuables
 
     public override void FocusCamera()
     {
-        prefabSecondCamera.gameObject.SetActive(true);
+        prefabSecondCamera.activateDesactivateCamera();
         prefabSecondCamera.Tarjet = this.gameObject.transform;
     }
 
     public override void Drop()
     {
-        prefabSecondCamera.gameObject.SetActive(false);
+        prefabSecondCamera.activateDesactivateCamera();
         prefabSecondCamera.Tarjet = null;
     }
 }

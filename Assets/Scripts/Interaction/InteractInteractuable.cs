@@ -14,4 +14,14 @@ public class InteractInteractuable : Interactuables
     {
         
     }
+
+    public override void Interaction()
+    {
+        this.firstPerson.enabled = false;
+    }
+
+    public override void Drop()
+    {
+        this.firstPerson.enabled = true;
+    }
 }

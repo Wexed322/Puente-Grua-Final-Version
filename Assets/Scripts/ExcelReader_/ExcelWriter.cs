@@ -1,32 +1,39 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System;
 using UnityEngine;
 using System.IO;
-//using Microsoft.Office.Interop.Excel;
-
+using System.Text;
 
 public class ExcelWriter : MonoBehaviour
 {
-    [SerializeField]
-    public TextAsset textAssetData;
-
-
-    //PRUEBA EXPORT EXCEL
-    public string fileName;
-
+    private static TextWriter tw;
+    private static string path;
+    private static string nombreFile;
     void Start()
     {
-        fileName = UnityEngine.Application.dataPath + "/test.csv";
-        WriteCVS();
+        nombreFile = "";
     }
-    public void WriteCVS() 
+    public static void WriteCVS(string accesorios)
     {
-        TextWriter tw = new StreamWriter(fileName,false);
-        tw.WriteLine("PA;P;P;PASAD;PIPI");
+        tw = new StreamWriter(path, true);//abrir el documento
+        tw.WriteLine(accesorios);// calls continuos en una misma linea no hara saltos
         tw.Close();
+    }
 
-        tw = new StreamWriter(fileName, true);
-        tw.Close();
+    public static void CreateFile(string nombreFileInput)
+    {
+        if (nombreFile != nombreFileInput)
+        {
+            path = UnityEngine.Application.dataPath + "\\Excels";
+            nombreFile = nombreFileInput;
+            StringBuilder cvscontent = new StringBuilder();//para usar strings de forma no tan costosa para el sistema, por la expliocacion de nilton porque en relaidad se podria poner un string normal y tambien funiona pero boe
+            path +=  string.Format("\\{0}.csv", nombreFileInput);
+
+            File.AppendAllText(path, cvscontent.ToString());
+
+            tw = new StreamWriter(path, false);//borrar lo que había anteriormente 
+            tw.Close();
+        }
     }
 }
+

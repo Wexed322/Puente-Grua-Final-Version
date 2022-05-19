@@ -10,6 +10,7 @@ public class FirstPersonLook : MonoBehaviour
     Vector2 velocity;
     Vector2 frameVelocity;
 
+    public float offsetConCheckList; 
 
     void Reset()
     {
@@ -25,6 +26,7 @@ public class FirstPersonLook : MonoBehaviour
 
     void Update()
     {
+
         // Get smooth velocity.
         Vector2 mouseDelta = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
         Vector2 rawFrameVelocity = Vector2.Scale(mouseDelta, Vector2.one * sensitivity);
@@ -32,8 +34,9 @@ public class FirstPersonLook : MonoBehaviour
         velocity += frameVelocity;
         velocity.y = Mathf.Clamp(velocity.y, -90, 90);
 
+
         // Rotate camera up-down and controller left-right from velocity.
-        transform.localRotation = Quaternion.AngleAxis(-velocity.y, Vector3.right);
+        transform.localRotation = Quaternion.AngleAxis(-velocity.y + offsetConCheckList, Vector3.right);
         character.localRotation = Quaternion.AngleAxis(velocity.x, Vector3.up);
     }
 }

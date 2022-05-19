@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickObject : MonoBehaviour
 {
     [SerializeField]
-    Interactuables interactuableObject;
+    InteractuableObject interactuableObject;
 
     void Update()
     {
@@ -13,12 +13,12 @@ public class PickObject : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                interactuableObject.Drop();
+                interactuableObject.drop();
                 interactuableObject = null;
             }
             if (Input.GetKeyDown(KeyCode.F))
             {
-
+                interactuableObject.UsarObject();
             }
         }
     }
@@ -31,8 +31,8 @@ public class PickObject : MonoBehaviour
 
             if (interactuableObject == null && Input.GetKeyDown(KeyCode.E))
             {
-                interactuableObject = other.gameObject.GetComponent<Interactuables>();
-                actionAfterContact(interactuableObject);
+                interactuableObject = other.gameObject.GetComponent<InteractuableObject>();
+                firstActionofObjects(interactuableObject);
 
             }
 
@@ -47,20 +47,15 @@ public class PickObject : MonoBehaviour
 
     }
 
-    public void actionAfterContact(Interactuables objectInteract) 
+    public void firstActionofObjects(InteractuableObject a) 
     {
-        //objectInteract.examinado();
-        if (objectInteract.myType == TypeInteractionObject.observable)
+        if (a.myType == TypeInteractionObject.interactuable)
         {
-            objectInteract.FocusCamera();
+            a.FirstActionWith(this.transform);//se va a la mano
         }
-        else if (objectInteract.myType == TypeInteractionObject.interactuable)
+        else if (a.myType == TypeInteractionObject.observable) 
         {
-
-        }
-        else 
-        {
-            objectInteract.putInHand(this.transform);
+            a.FirstActionWith();
         }
     }
 }
