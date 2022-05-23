@@ -15,3 +15,4 @@ MonoBehaviour:
   ID: 1
   nombre: eslingaTela
   falla: rota
+  myTextUI: 1

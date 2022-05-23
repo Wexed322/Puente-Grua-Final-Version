@@ -390,8 +390,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6096954325362934694}
-  - component: {fileID: 8967067973036122453}
   - component: {fileID: 5030266536398418623}
+  - component: {fileID: 6701935749313596469}
   m_Layer: 0
   m_Name: Hand
   m_TagString: Untagged
@@ -406,26 +406,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2342154064285084857}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4, y: 0.92, z: 0.746}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.39999962, y: 0.9200001, z: 0.746}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7652557641514368917}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &8967067973036122453
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2342154064285084857}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.75
-  m_Center: {x: -0.37, y: 0, z: 0}
 --- !u!114 &5030266536398418623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,6 +426,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactuableObject: {fileID: 0}
+  interactuandoConObjeto: 0
+--- !u!136 &6701935749313596469
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2342154064285084857}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.29
+  m_Height: 1.66
+  m_Direction: 2
+  m_Center: {x: -0.37, y: 0.22, z: 0}
 --- !u!1 &2794718687042627710
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum TypeInteractionObject { observable, interactuable, both}
+
 public class Interactuables : MonoBehaviour
 {
     protected FirstPersonMovement firstPerson;

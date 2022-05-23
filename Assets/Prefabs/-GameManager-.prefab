@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objetosAveriados: 
-  frames: 60
+  frames: 90
 --- !u!1001 &1109476617585455600
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,6 +7,8 @@ public class PickObject : MonoBehaviour
     [SerializeField]
     InteractuableObject interactuableObject;
 
+    [SerializeField] bool interactuandoConObjeto;
+
     void Update()
     {
         if (interactuableObject != null) 
@@ -15,6 +17,7 @@ public class PickObject : MonoBehaviour
             {
                 interactuableObject.drop();
                 interactuableObject = null;
+                interactuandoConObjeto = false;
             }
             if (Input.GetKeyDown(KeyCode.F))
             {
@@ -23,29 +26,47 @@ public class PickObject : MonoBehaviour
         }
     }
 
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == 8 && !interactuableObject)
+        {
+            interactuableObject = other.gameObject.GetComponent<InteractuableObject>();
+
+
+            MenuController.MenuControllerInstance.UI_forObjects.addText(interactuableObject.myData.myTextUI.ToString() + " (E)");
+        }
+
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == 8)
         {
             //UI.instance.showMessage(other.gameObject.GetComponent<PickObject>().id);
 
-            if (interactuableObject == null && Input.GetKeyDown(KeyCode.E))
+            if (interactuableObject != null && Input.GetKeyDown(KeyCode.E) && !interactuandoConObjeto)
             {
-                interactuableObject = other.gameObject.GetComponent<InteractuableObject>();
+                interactuandoConObjeto = true;
                 firstActionofObjects(interactuableObject);
-
             }
 
         }
     }
+
     private void OnTriggerExit(Collider other)
     {
-        /*if (other.gameObject.layer == 8)
+        if (other.gameObject.layer == 8 && interactuableObject != null)
         {
-            UI.instance.hideMessage();
-        }*/
-
+            if (!interactuandoConObjeto) 
+            {
+                interactuandoConObjeto = false;
+                interactuableObject = null;
+                MenuController.MenuControllerInstance.UI_forObjects.deleteTextsUI();
+            }
+        }
     }
+
+
 
     public void firstActionofObjects(InteractuableObject a) 
     {
@@ -58,4 +79,5 @@ public class PickObject : MonoBehaviour
             a.FirstActionWith();
         }
     }
+
 }

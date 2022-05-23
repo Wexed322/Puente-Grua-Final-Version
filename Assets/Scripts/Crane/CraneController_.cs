@@ -26,7 +26,7 @@ public class CraneController_ : MonoBehaviour
 
     void Update()
     {
-        /*if (Input.GetKey(KeyCode.Keypad7))   //DOWN
+        if (Input.GetKey(KeyCode.Keypad7))   //DOWN
         {
             //estado_Cuerda = 1;
 
@@ -67,6 +67,6 @@ public class CraneController_ : MonoBehaviour
             cuerda.transform.position += Vector3.right * Time.deltaTime;
             cuerda2.transform.position += Vector3.right * Time.deltaTime;
             //estado_Cuerda = 2;
-        }*/
+        }
     }
 }

@@ -8,6 +8,14 @@ public class MenuController : MonoBehaviour
     public static MenuController MenuControllerInstance;
     GameObject panel;
     RectTransform myRectTransform;
+
+
+
+
+
+    /*Para mostrar UI de objetos*/
+    public UI_ForObjects UI_forObjects;
+    
     private void Awake()
     {
         if (MenuControllerInstance == null)
@@ -30,7 +38,7 @@ public class MenuController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P)) //HASTA ACABAR EL OBSERVE DE LOS OTROS
         {
-            this.gameObject.SetActive(false);
+            this.gameObject.transform.GetChild(0).gameObject.SetActive(false);
         }
     }
     public void BotonInicioMenu() 

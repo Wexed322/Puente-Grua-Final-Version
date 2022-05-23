@@ -19,17 +19,27 @@ public class InteractuableObjectObserve : InteractuableObject
         
     public override void FirstActionWith()
     {
+        MenuController.MenuControllerInstance.UI_forObjects.overrideText("Dejar de Examinar (TAB)");
+
+
         FocusCamera(pivoteParaCamara);
     }
 
     public override void drop()
     {
+        MenuController.MenuControllerInstance.UI_forObjects.deleteTextsUI();
+
+
+        this.camaraPlayer.sensitivity = 2;
+        this.movimientoPlayer.enabled = true;
         cameraOrbiting.Tarjet = null;
         cameraOrbiting.activateDesactivateCamera();
     }
 
     public void FocusCamera(Transform tarjet)
     {
+        this.camaraPlayer.sensitivity = 0;
+        this.movimientoPlayer.enabled = false;
         cameraOrbiting.activateDesactivateCamera();
         cameraOrbiting.Tarjet = tarjet;
     }

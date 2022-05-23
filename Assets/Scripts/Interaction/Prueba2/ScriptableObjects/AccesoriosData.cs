@@ -9,4 +9,6 @@ public class AccesoriosData : ScriptableObject
     public int ID;
     public string nombre;
     public string falla;
+
+    public TextUI myTextUI;
 }

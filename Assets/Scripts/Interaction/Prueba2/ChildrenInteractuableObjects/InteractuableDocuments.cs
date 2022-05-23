@@ -38,17 +38,18 @@ public class InteractuableDocuments : InteractuableObject
         }
         
     }
-    public void debugDeprueba()
-    {
-        Debug.Log("putamadreeeeeeeeee");
-    }
     public override void FirstActionWith(Transform padre)
     {
+        MenuController.MenuControllerInstance.UI_forObjects.overrideText("Escribir (F)");
+        MenuController.MenuControllerInstance.UI_forObjects.addText("Soltar (TAB)");
+
+
         base.FirstActionWith(padre);
     }
 
     public override void drop()
     {
+        MenuController.MenuControllerInstance.UI_forObjects.deleteTextsUI();
         this.enUso_ = false;
         accionesAntesYDespuesUsarDocumento(enUso_);
 
