@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PickObject : MonoBehaviour
 {
-    [SerializeField]
-    InteractuableObject interactuableObject;
+    public InteractuableObject interactuableObject;
 
-    [SerializeField] bool interactuandoConObjeto;
+    public bool interactuandoConObjeto;
 
     void Update()
     {

@@ -13,21 +13,27 @@ public class GameManager : MonoBehaviour
 {
     public List<int> objetosAveriados;
     public static GameManager GameManagerInstance;
+    public SoundManager soundManagerInstance;
     public int frames;
+
+    //Control los menus
+    public int EscenaParaActivarMenuGame;
 
     private void Awake()
     {
         if (GameManagerInstance == null)
         {
-            Application.targetFrameRate = frames;
+            //Application.targetFrameRate = frames;
             GameManagerInstance = this;
             DontDestroyOnLoad(GameManagerInstance);
+            soundManagerInstance = this.GetComponent<SoundManager>();
         }
         else 
         {
             Destroy(this.gameObject);
         }
     }
+
     public void loadNextScene()
     {
         //difuminado
@@ -48,9 +54,19 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         LoadSceneEvent.eventsAfterChangeScene?.Invoke();
+
+
+
+
+        //Cuando Cargo la otra escena
     }
     public void exitSimulator() 
     {
         Application.Quit();
+    }
+
+    public void restarScene() 
+    {
+        StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex));
     }
 }
