@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: EnrolladoCable
   m_EditorClassIdentifier: 
   ID: 0
-  nombre: Cable Enrollado
+  nombre: "Cable Enrollado del puente gr\xFAa"
   falla: Cables enredados
   myTextUI: Examinar Cable Enrollado
+  examinado: 0

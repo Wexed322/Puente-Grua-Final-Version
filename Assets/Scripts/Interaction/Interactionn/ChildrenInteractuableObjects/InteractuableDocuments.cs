@@ -49,6 +49,7 @@ public class InteractuableDocuments : InteractuableObject
 
     public override void drop()
     {
+        base.drop();
         MenuController.MenuControllerInstance.UI_forObjects.deleteTextsUI();
         this.enUso_ = false;
         accionesAntesYDespuesUsarDocumento(enUso_);

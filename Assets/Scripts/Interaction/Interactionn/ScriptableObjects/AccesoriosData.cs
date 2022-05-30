@@ -11,4 +11,6 @@ public class AccesoriosData : ScriptableObject
     public string falla;
 
     public string myTextUI;
+
+    public bool examinado;
 }

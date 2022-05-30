@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
     {
         if (GameManagerInstance == null)
         {
-            //Application.targetFrameRate = frames;
+            Application.targetFrameRate = frames;
             GameManagerInstance = this;
             DontDestroyOnLoad(GameManagerInstance);
             soundManagerInstance = this.GetComponent<SoundManager>();

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GanchoC_Doblado
   m_EditorClassIdentifier: 
   ID: 0
-  nombre: ganchoC
+  nombre: GanchoC
   falla: oxido, doblado
   myTextUI: Examinar gancho C
+  examinado: 0

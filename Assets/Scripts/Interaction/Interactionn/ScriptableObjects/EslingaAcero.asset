@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: EslingaAcero
   m_EditorClassIdentifier: 
   ID: 0
-  nombre: eslingaAcero
+  nombre: Eslinga de acero
   falla: 
   myTextUI: Examinar eslinga
+  examinado: 0

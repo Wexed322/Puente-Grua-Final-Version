@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DocumentoPrecor_EncargosDelDia
   m_EditorClassIdentifier: 
   ID: 0
-  nombre: encargosDelDia
+  nombre: "Documento de encargos del d\xEDa"
   falla: 
   myTextUI: Tomar documento
+  examinado: 0

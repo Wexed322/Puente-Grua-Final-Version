@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GanchoC2_Recto
   m_EditorClassIdentifier: 
   ID: 0
-  nombre: ganchoC
+  nombre: GanchoC
   falla: 
   myTextUI: Examinar gancho C
+  examinado: 0

@@ -27,6 +27,7 @@ public class InteractuableObjectObserve : InteractuableObject
 
     public override void drop()
     {
+        base.drop();
         MenuController.MenuControllerInstance.UI_forObjects.deleteTextsUI();
 
 

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Estrobo
   m_EditorClassIdentifier: 
   ID: 2
-  nombre: estrobo
+  nombre: Estrobo
   falla: 
   myTextUI: Examinar Estrobo
+  examinado: 0

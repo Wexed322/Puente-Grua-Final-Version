@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SandWich
   m_EditorClassIdentifier: 
   ID: 0
-  nombre: sandwich
+  nombre: Sandwich
   falla: 
   myTextUI: Examinar sandwich
+  examinado: 0

@@ -37,6 +37,7 @@ public class InteractuableObjectBotonera : InteractuableObject
     }
     public override void drop()
     {
+        base.drop();
         MenuController.MenuControllerInstance.UI_forObjects.deleteTextsUI();
         rb.isKinematic = false;
         this.enUso_ = false;

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DocumentoPrecor_CheckList
   m_EditorClassIdentifier: 
   ID: 0
-  nombre: checklist
+  nombre: Checklist
   falla: 
   myTextUI: Tomar checklist
+  examinado: 0

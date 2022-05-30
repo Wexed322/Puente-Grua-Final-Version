@@ -37,12 +37,12 @@ public class InteractuableObject : MonoBehaviour
 
     public virtual void UsarObject()
     {
-
+        this.myData.examinado = true;
     }
 
     public virtual void drop()
     {
-
+        this.myData.examinado = true;
     }
 
     public virtual void dropKeepParent()

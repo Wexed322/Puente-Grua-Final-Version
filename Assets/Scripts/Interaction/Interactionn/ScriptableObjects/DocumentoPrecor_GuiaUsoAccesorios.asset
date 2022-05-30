@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: DocumentoPrecor_GuiaUsoAccesorios
   m_EditorClassIdentifier: 
   ID: 0
-  nombre: usoDeAccesorios
+  nombre: "Documento de gu\xEDa de izaje"
   falla: 
   myTextUI: "Tomar gu\xEDa de uso"
+  examinado: 0

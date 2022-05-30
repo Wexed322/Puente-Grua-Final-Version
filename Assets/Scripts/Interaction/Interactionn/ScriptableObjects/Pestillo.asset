@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Pestillo
   m_EditorClassIdentifier: 
   ID: 4
-  nombre: pestillo1
+  nombre: Segundo Pestillo
   falla: 
   myTextUI: Examinar pestillo
+  examinado: 0

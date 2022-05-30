@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: EslingaTela
   m_EditorClassIdentifier: 
   ID: 1
-  nombre: eslingaTela
+  nombre: Eslinga de tela
   falla: rota
   myTextUI: Examinar eslinga
+  examinado: 0

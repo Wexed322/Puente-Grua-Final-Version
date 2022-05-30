@@ -78,6 +78,7 @@ public class InteractuableRigger : InteractuableObject
 
     public override void drop()
     {
+        base.drop();
         MenuController.MenuControllerInstance.UI_forObjects.deleteTextsUI();
         enUso_ = false;
         accionesAntesYDespuesHablar(enUso_);
