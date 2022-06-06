@@ -12,7 +12,7 @@ public class PuertaEscenaExaminacion : MonoBehaviour
     public bool onlyOne;
     private void Start()
     {
-        objetosAveriadosManager_ = GameManager.GameManagerInstance.GetComponent<ObjetosAveriadosManager>();
+        objetosAveriadosManager_ = GetComponent<ObjetosAveriadosManager>();
     }
 
     private void Update()
@@ -30,7 +30,7 @@ public class PuertaEscenaExaminacion : MonoBehaviour
             ExcelWriter.CreateFile(nombreFile);
 
 
-            ExcelWriter.WriteCVS("**** Objetos examinados por el cliente ****");
+            ExcelWriter.WriteCVS("**** OBJETOS EXAMINADOS POR EL CLIENTE ****");
 
             for (int i = 0; i < objetosAveriadosManager_.listaObjetosEXAMINADOS.Count; i++)
             {
@@ -40,7 +40,7 @@ public class PuertaEscenaExaminacion : MonoBehaviour
             }
 
             ExcelWriter.WriteCVS(" ");
-            ExcelWriter.WriteCVS("**** Objetos NO examinados por el cliente ****");
+            ExcelWriter.WriteCVS("**** OBJETOS NO EXAMINADOS POR EL CLIENTE ****");
 
             for (int i = 0; i < objetosAveriadosManager_.listaObjetosNOEXAMINADOS.Count; i++)
             {
@@ -50,7 +50,7 @@ public class PuertaEscenaExaminacion : MonoBehaviour
             }
 
             ExcelWriter.WriteCVS(" ");
-            ExcelWriter.WriteCVS("**** Anotaciones en el CheckList ****");
+            ExcelWriter.WriteCVS("**** ANOTACIONES EN EL CHECKLIST ****");
 
             for (int i = 0; i < objetoDondeSeGuardanLosTextosParaExcel.transform.childCount; i++)//CARGO LOS TEXTOS EN EL EXCECL
             {

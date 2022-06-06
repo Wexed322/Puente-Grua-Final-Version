@@ -12,12 +12,7 @@ public class ObjetosAveriadosManager : MonoBehaviour
     public List<string> nombresDeObjetosNOEXAMINADOS;
     void Start()
     {
-        listaObjetosInteractuables = FindObjectsOfType<InteractuableObject>().ToList();
-
-        foreach (InteractuableObject item in listaObjetosInteractuables)
-        {
-            item.myData.examinado = false;
-        }
+        findObjectsInteractuable();
     }
     public void filterExaminedObjects() 
     {
@@ -32,6 +27,16 @@ public class ObjetosAveriadosManager : MonoBehaviour
                 nombresDeObjetosNOEXAMINADOS.Add(item.myData.nombre);
                 listaObjetosNOEXAMINADOS.Add(item);
             }
+        }
+    }
+
+    public void findObjectsInteractuable() 
+    {
+        listaObjetosInteractuables = FindObjectsOfType<InteractuableObject>().ToList();
+
+        foreach (InteractuableObject item in listaObjetosInteractuables)
+        {
+            item.myData.examinado = false;
         }
     }
 }

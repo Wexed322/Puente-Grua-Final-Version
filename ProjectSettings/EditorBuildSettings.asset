@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Examinacion2.unity
+    path: Assets/Scenes/Examinacion.unity
     guid: c4bfeaf02006d05468f6e31a458c1ba0
+  - enabled: 1
+    path: Assets/Scenes/Izaje1.unity
+    guid: 40142d3af806ea141880e1bb48e9d955
   - enabled: 1
     path: Assets/Scenes/Introduction.unity
     guid: 7764e214e279a3a4cb5d204393ec5420

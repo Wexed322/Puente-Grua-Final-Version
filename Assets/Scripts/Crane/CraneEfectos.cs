@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CraneEfectos : MonoBehaviour
 {
+    public GameObject cable;
     CraneController_ myCraneController;
 
     [Header("---- Audio ----")]
@@ -13,7 +14,9 @@ public class CraneEfectos : MonoBehaviour
     void Start()
     {
         myCraneController = GetComponent<CraneController_>();
-        GameManager.GameManagerInstance.soundManagerInstance.playDifferentSounds(new List<AudioClip>() { cableEnrollado, puenteGruaMovimiento });
+
+        if(GameManager.GameManagerInstance.soundManagerInstance.myAudioSources.Count == 0)
+            GameManager.GameManagerInstance.soundManagerInstance.playDifferentSounds(new List<AudioClip>() { cableEnrollado, puenteGruaMovimiento });
     }
 
     void Update()
@@ -21,6 +24,7 @@ public class CraneEfectos : MonoBehaviour
         if (myCraneController.cuerdaEnrollando)
         {
             GameManager.GameManagerInstance.soundManagerInstance.activeSound(0);
+            cable.gameObject.transform.Rotate(Vector3.right, 5f);
         }
         else 
         {
