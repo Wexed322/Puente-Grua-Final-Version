@@ -11,7 +11,7 @@ public class LoadSceneEvent
 }
 public class GameManager : MonoBehaviour
 {
-    public List<int> objetosAveriados;
+    public List<string> objetosAveriados;
     public static GameManager GameManagerInstance;
     public SoundManager soundManagerInstance;
     public int frames;
@@ -19,8 +19,13 @@ public class GameManager : MonoBehaviour
     //Control los menus
     public int EscenaParaActivarMenuGame;
 
+
+    //Controlar secuencia de niveles
+    public int secuencia;//si es 0 es pirque deberiamos estar en el primero nivel, pero si no estamos es porque estamos testeando un escena aislada
+
     private void Awake()
     {
+
         if (GameManagerInstance == null)
         {
             Application.targetFrameRate = frames;
@@ -42,6 +47,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoadScene(int indexScene)
     {
+        secuencia++;
         LoadSceneEvent.eventsBeforeChangeScene?.Invoke();
         AsyncOperation op = SceneManager.LoadSceneAsync(indexScene);
         //GameObject sliderCargaObject = menuController.InicializarMenuDeCarga(MenuCargaPrefab);

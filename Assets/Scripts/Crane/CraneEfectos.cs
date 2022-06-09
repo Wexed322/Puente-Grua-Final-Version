@@ -32,7 +32,7 @@ public class CraneEfectos : MonoBehaviour
         }
 
 
-        if (myCraneController.puenteGruaMoviendose) 
+        if (myCraneController.gruaActivada) 
         {
             GameManager.GameManagerInstance.soundManagerInstance.activeSound(1);
         }

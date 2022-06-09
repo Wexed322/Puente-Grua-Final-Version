@@ -5,9 +5,13 @@ using Obi;
 
 public class CraneController_ : MonoBehaviour
 {
+    [Header("--- Botones Funcionales ---")]
+    public BotonesBotonera referenceBotonesFuncionales;
+
     [Header("--- Triggers de Funcionamiento ---")]
     public bool cuerdaEnrollando;
     public bool puenteGruaMoviendose;
+    public bool gruaActivada;
 
     [Header("--- Movimiento Trans y Horizo ---")]
 
@@ -54,15 +58,26 @@ public class CraneController_ : MonoBehaviour
 
     void Update()
     {
-        cuerdasController();
-        movimientoController();
-    }
+        activacionCrane();
+        if (gruaActivada) 
+        {
+            cuerdasController();
+            movimientoController();
+        }
 
+    }
+    public void activacionCrane() 
+    {
+        if (Input.GetKeyDown(KeyCode.Keypad0) && referenceBotonesFuncionales.botonesFuncionales[0]) 
+        {
+            gruaActivada = !gruaActivada;
+        }
+    }
     public void cuerdasController() 
     {
         cuerdaEnrollando = true;
 
-        if (Input.GetKey(KeyCode.Keypad7))   //DOWN
+        if (Input.GetKey(KeyCode.Keypad7) && referenceBotonesFuncionales.botonesFuncionales[1])   //DOWN
         {
             if (rope.restLength < maxLength || rope2.restLength < maxLength)
             {
@@ -74,7 +89,7 @@ public class CraneController_ : MonoBehaviour
             }
         }
 
-        else if (Input.GetKey(KeyCode.Keypad8))     //UP
+        else if (Input.GetKey(KeyCode.Keypad8) && referenceBotonesFuncionales.botonesFuncionales[2])     //UP
         {
             if (rope.restLength > minLength || rope2.restLength > minLength)
             {
@@ -94,7 +109,7 @@ public class CraneController_ : MonoBehaviour
     public void movimientoController() 
     {
         puenteGruaMoviendose = true;
-        if (Input.GetKey(KeyCode.Keypad1)) //adelante
+        if (Input.GetKey(KeyCode.Keypad1) && referenceBotonesFuncionales.botonesFuncionales[5]) //adelante
         {
             directionZ = Mathf.Lerp(directionZ, 1, gradoIncremento);
 
@@ -103,21 +118,21 @@ public class CraneController_ : MonoBehaviour
             //EL EFECTO
         }
 
-        else if (Input.GetKey(KeyCode.Keypad2))     //atras
+        else if (Input.GetKey(KeyCode.Keypad2) && referenceBotonesFuncionales.botonesFuncionales[6])     //atras
         {
             directionZ = Mathf.Lerp(directionZ, -1, gradoIncremento);
 
             velocidadMovimiento = Mathf.Lerp(velocidadMovimiento, 1.5f, 0.005f);
         }
 
-        else if (Input.GetKey(KeyCode.Keypad5))     //derecha
+        else if (Input.GetKey(KeyCode.Keypad5) && referenceBotonesFuncionales.botonesFuncionales[4])     //derecha
         {
             directionX = Mathf.Lerp(directionX, -1, gradoIncremento);
 
             velocidadMovimiento = Mathf.Lerp(velocidadMovimiento, 1.5f, 0.005f);
         }
 
-        else if (Input.GetKey(KeyCode.Keypad4))     //izquierda
+        else if (Input.GetKey(KeyCode.Keypad4) && referenceBotonesFuncionales.botonesFuncionales[3])     //izquierda
         {
             directionX = Mathf.Lerp(directionX, 1, gradoIncremento);
 

@@ -5,13 +5,18 @@ using UnityEngine;
 public class Averia : MonoBehaviour
 {
     public AccesoriosData myData;
-    void Start()
+    public bool fallar;
+    public void Start()
     {
-        
+        fallar = myData.examinado ? false : true;
     }
 
-    void Update()
+    public virtual void restauracionFunction() 
     {
-        
+
+    }
+    public virtual void fallarFunction() 
+    {
+
     }
 }

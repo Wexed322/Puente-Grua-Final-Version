@@ -9,6 +9,7 @@ public class InteractuableObjectBotonera : InteractuableObject
     public Rigidbody rb;
     public bool watching;
 
+
     new void Start()
     {
         base.Start();
@@ -58,4 +59,6 @@ public class InteractuableObjectBotonera : InteractuableObject
         cameraOrbiting.activateDesactivateCamera();
         cameraOrbiting.Tarjet = tarjet;
     }
+
+ 
 }

@@ -8,7 +8,7 @@ public class AveriaManager : MonoBehaviour
     public List<Averia> objetosAveriados;
     void Start()
     {
-        objetosAveriados = FindObjectsOfType<Averia>().ToList();
+        /*objetosAveriados = FindObjectsOfType<Averia>().ToList();
         foreach (Averia item in objetosAveriados)
         {
             if (!item.myData.examinado) 
@@ -19,7 +19,7 @@ public class AveriaManager : MonoBehaviour
             {
                 Debug.Log(item.myData.nombre + "fue examiando");
             }
-        }
+        }*/
     }
     void Update()
     {

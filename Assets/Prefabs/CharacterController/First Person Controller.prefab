@@ -1059,10 +1059,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da9279648e01c044c9f9fd68e7404a4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  referenceBotonesFuncionales: {fileID: 11400000, guid: 088032a1e2ecc194383ab08b1a541c1c, type: 2}
+  cuerdaEnrollando: 0
+  puenteGruaMoviendose: 0
+  gruaActivada: 0
+  vigasPuente: {fileID: 0}
+  carroPuente: {fileID: 0}
+  velocidadMovimiento: 0
+  gradoDecremento: 0
+  gradoIncremento: 0
   cuerda: {fileID: 0}
   cuerda2: {fileID: 0}
+  cuerda3: {fileID: 0}
   minLength: 1.5
-  maxLength: 13
+  maxLength: 6
   speedCuerda: 0
   MaxspeedCuerda: 0
 --- !u!1 &7655462012012435748

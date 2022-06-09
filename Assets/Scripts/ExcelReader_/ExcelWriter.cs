@@ -11,9 +11,6 @@ public class ExcelWriter : MonoBehaviour
     private static string nombreFile;
     void Start()
     {
-        Debug.Log(nombreFile);
-
-
         nombreFile = "";
     }
     public static void WriteCVS(string accesorios)
