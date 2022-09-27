@@ -23,9 +23,11 @@ public class GameManager : MonoBehaviour
     //Controlar secuencia de niveles
     public int secuencia;//si es 0 es pirque deberiamos estar en el primero nivel, pero si no estamos es porque estamos testeando un escena aislada
 
+    //Control GAME OVER
+    public bool simulationEnd;
+
     private void Awake()
     {
-
         if (GameManagerInstance == null)
         {
             Application.targetFrameRate = frames;
@@ -42,12 +44,20 @@ public class GameManager : MonoBehaviour
     public void loadNextScene()
     {
         //difuminado
+        secuencia++;
         StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex + 1));
+    }
+    public void loadScene(int index) 
+    {
+        StartCoroutine(LoadScene(index));
+        if (index == 0) 
+        {
+            secuencia = 0;
+        }
     }
 
     IEnumerator LoadScene(int indexScene)
     {
-        secuencia++;
         LoadSceneEvent.eventsBeforeChangeScene?.Invoke();
         AsyncOperation op = SceneManager.LoadSceneAsync(indexScene);
         //GameObject sliderCargaObject = menuController.InicializarMenuDeCarga(MenuCargaPrefab);

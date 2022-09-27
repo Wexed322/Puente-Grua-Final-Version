@@ -33,8 +33,12 @@ public class InteractuableObjectBotonera : InteractuableObject
     }
     public override void UsarObject()
     {
-        watching = true;
-        FocusCamera(pivoteParaCamara);
+        if (!watching) 
+        {
+            FocusCamera(pivoteParaCamara);
+            watching = true;
+        }
+            
     }
     public override void drop()
     {

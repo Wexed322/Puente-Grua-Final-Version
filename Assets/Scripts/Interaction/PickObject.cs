@@ -7,7 +7,7 @@ public class PickObject : MonoBehaviour
     public InteractuableObject interactuableObject;
 
     public bool interactuandoConObjeto;
-
+    public bool viendoBotonera;
     void Update()
     {
         if (interactuableObject != null) 

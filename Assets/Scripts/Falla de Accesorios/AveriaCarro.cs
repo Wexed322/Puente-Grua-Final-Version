@@ -8,7 +8,7 @@ public class AveriaCarro : Averia
     new void Start()
     {
         base.Start();
-        if (this.fallar)
+        if (this.fallar && GameManager.GameManagerInstance.secuencia != 0)
         {
             fallarFunction();
         }
@@ -19,7 +19,7 @@ public class AveriaCarro : Averia
     }
     public override void fallarFunction()
     {
-        
+        this.finalizarSimulacion();
     }
     public override void restauracionFunction()
     {

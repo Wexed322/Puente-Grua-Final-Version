@@ -109,7 +109,7 @@ public class CraneController_ : MonoBehaviour
     public void movimientoController() 
     {
         puenteGruaMoviendose = true;
-        if (Input.GetKey(KeyCode.Keypad1) && referenceBotonesFuncionales.botonesFuncionales[5]) //adelante
+        if (Input.GetKey(KeyCode.Keypad2) && referenceBotonesFuncionales.botonesFuncionales[5]) //adelante
         {
             directionZ = Mathf.Lerp(directionZ, 1, gradoIncremento);
 
@@ -118,7 +118,7 @@ public class CraneController_ : MonoBehaviour
             //EL EFECTO
         }
 
-        else if (Input.GetKey(KeyCode.Keypad2) && referenceBotonesFuncionales.botonesFuncionales[6])     //atras
+        else if (Input.GetKey(KeyCode.Keypad1) && referenceBotonesFuncionales.botonesFuncionales[6])     //atras
         {
             directionZ = Mathf.Lerp(directionZ, -1, gradoIncremento);
 

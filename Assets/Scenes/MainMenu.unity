@@ -2205,6 +2205,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2239989375296456867, guid: a52767ee028ef5f4ba8f7569ef9bc296, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239989375296456867, guid: a52767ee028ef5f4ba8f7569ef9bc296, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239989375296456867, guid: a52767ee028ef5f4ba8f7569ef9bc296, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2239989375296456867, guid: a52767ee028ef5f4ba8f7569ef9bc296, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -5601,6 +5613,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BaseEscenarioExaminacion
       objectReference: {fileID: 0}
+    - target: {fileID: 7840551988828899857, guid: 2f0921357df5eb54192814953b6373bd, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33232d95525496a4e9d5105be806121a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f0921357df5eb54192814953b6373bd, type: 3}
 --- !u!33 &7853279157504484278

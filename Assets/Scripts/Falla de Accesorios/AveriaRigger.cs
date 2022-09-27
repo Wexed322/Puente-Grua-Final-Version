@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class AveriaRigger : Averia
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject idle;
+    public GameObject walk;
+    public GameObject trash;
+    public GameObject buggy;
+
+
+    public List<GameObject> cinematica;
+    new void Start()
     {
-        
+        walk.gameObject.SetActive(false);
+        base.Start();
+        if (this.fallar && GameManager.GameManagerInstance.secuencia != 0)
+        {
+            fallarFunction();
+
+            base.finalizarSimulacion();//FINALIZAMOPS SIMULACION POR FALLO GRAVE
+        }
+        else
+        {
+            restauracionFunction();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void fallarFunction()
     {
-        
+        buggy.gameObject.SetActive(false);
+    }
+
+    public override void restauracionFunction()
+    {
+        trash.gameObject.SetActive(false);
+        buggy.gameObject.SetActive(true);
     }
 }

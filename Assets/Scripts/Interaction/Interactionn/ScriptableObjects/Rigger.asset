@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 0
   nombre: Rigger
-  falla: Coordinar con Rigger
+  falla: No coordinaste el despeje de area para el izaje
   myTextUI: Hablar con rigger
+  examinado: 0

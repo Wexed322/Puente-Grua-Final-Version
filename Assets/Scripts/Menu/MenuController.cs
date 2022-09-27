@@ -26,6 +26,12 @@ public class MenuController : MonoBehaviour
     public FirstPersonLook camaraPlayer;
     public bool canPause;
 
+    /*Pantall de GameOver*/
+    public GameObject gameOverScreen_;
+
+    /*Pantalla de fin*/
+    public GameObject finalScreen_;
+
     private void Awake()
     {
         if (MenuControllerInstance == null)
@@ -58,6 +64,14 @@ public class MenuController : MonoBehaviour
         {
             menuNormal.gameObject.SetActive(false);
         }
+
+        
+    }
+
+    public void goToLobby() 
+    {
+        GameManager.GameManagerInstance.loadScene(0);
+        menuNormal.gameObject.gameObject.SetActive(true);
     }
     public void BotonInicioMenu() 
     {
@@ -73,6 +87,24 @@ public class MenuController : MonoBehaviour
         GameManager.GameManagerInstance.restarScene();
     }
 
+    public void showGameOverScreen() 
+    {
+        gameOverScreen_.gameObject.SetActive(true);
+
+        this.camaraPlayer.sensitivity = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
+    public void showFinalScreen()
+    {
+        finalScreen_.gameObject.SetActive(true);
+
+        this.camaraPlayer.sensitivity = 0;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        this.movimientoPlayer.enabled = false;
+    }
     public void PausarYDespausar() 
     {
         if (isPaused)

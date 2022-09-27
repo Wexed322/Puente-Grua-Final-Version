@@ -9,9 +9,13 @@ public class AveriaBotonera : Averia
     {
         base.Start();
 
-        if (fallar && GameManager.GameManagerInstance.secuencia!=0)//ESTO DEL GAMEMANAGER PARA PODAMOS TESTEAR CON TRANQUILIDAD ANAHSIE
+        Debug.Log(fallar && GameManager.GameManagerInstance.secuencia != 0);
+
+        if (fallar && GameManager.GameManagerInstance.secuencia != 0)//ESTO DEL GAMEMANAGER PARA PODAMOS TESTEAR CON TRANQUILIDAD ANAHSIE
         {
             fallarFunction();
+
+            base.finalizarSimulacion();//FINALIZAMOPS SIMULACION POR FALLO GRAVE
         }
         else 
         {

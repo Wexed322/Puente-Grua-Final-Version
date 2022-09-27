@@ -49,6 +49,11 @@ public class InteractuableDocuments : InteractuableObject
 
     public override void drop()
     {
+        //DESACTIVAMOS EL SCRIPT DE MENU
+        MenuController.MenuControllerInstance.enabled = true;
+
+
+
         base.drop();
         MenuController.MenuControllerInstance.UI_forObjects.deleteTextsUI();
         this.enUso_ = false;
@@ -59,6 +64,9 @@ public class InteractuableDocuments : InteractuableObject
 
     public override void UsarObject()
     {
+        //DESACTIVAMOS EL SCRIPT DE MENU
+        MenuController.MenuControllerInstance.enabled = false;
+
         this.enUso_ = true;
         accionesAntesYDespuesUsarDocumento(enUso_);
     }
