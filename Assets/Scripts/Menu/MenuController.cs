@@ -32,6 +32,7 @@ public class MenuController : MonoBehaviour
     /*Pantalla de fin*/
     public GameObject finalScreen_;
 
+
     private void Awake()
     {
         if (MenuControllerInstance == null)
