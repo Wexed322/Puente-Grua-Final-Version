@@ -46,6 +46,11 @@ public class CraneController_ : MonoBehaviour
     public float maxLength = 13;
     public float speedCuerda = 0f;
     public float MaxspeedCuerda;
+
+    public void activar_desactivar_Script(bool input) 
+    {
+        this.enabled = input;//PARA DESCACTIVARLO DESPUES DE QUE TERMINE SU START
+    }
     void Start()
     {
         rope = cuerda.GetComponent<ObiRope>();
@@ -54,6 +59,8 @@ public class CraneController_ : MonoBehaviour
         cursor2 = cuerda2.GetComponent<ObiRopeCursor>();
         roper3_AnclaAccesorio = cuerda3.GetComponent<ObiRope>();
         cursor3_AnclaAccesorio = cuerda3.GetComponent<ObiRopeCursor>();
+
+        activar_desactivar_Script(false);
     }
 
     void Update()

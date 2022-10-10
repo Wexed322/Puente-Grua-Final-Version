@@ -9,9 +9,14 @@ public class InteractuableObjectBotonera : InteractuableObject
     public Rigidbody rb;
     public bool watching;
 
+    [Header("Interaccion con botonera")]
+    [SerializeField] private CraneController_ craneReference;
+
 
     new void Start()
     {
+        craneReference = FindObjectOfType<CraneController_>();
+
         base.Start();
         if (pivoteParaCamara == null) //VERIFCAMOS SI TIENE UN PIVOTE POR DEFECTO
         {
@@ -25,6 +30,9 @@ public class InteractuableObjectBotonera : InteractuableObject
     }
     public override void FirstActionWith(Transform padre)
     {
+        craneReference.activar_desactivar_Script(true);
+
+
         rb.isKinematic = true;
         this.enUso_ = true;
         MenuController.MenuControllerInstance.UI_forObjects.overrideText("Examinar (F)");
@@ -33,6 +41,10 @@ public class InteractuableObjectBotonera : InteractuableObject
     }
     public override void UsarObject()
     {
+        craneReference.activar_desactivar_Script(false);
+
+
+
         if (!watching) 
         {
             FocusCamera(pivoteParaCamara);
@@ -42,6 +54,9 @@ public class InteractuableObjectBotonera : InteractuableObject
     }
     public override void drop()
     {
+        craneReference.activar_desactivar_Script(false);
+
+
         base.drop();
         MenuController.MenuControllerInstance.UI_forObjects.deleteTextsUI();
         rb.isKinematic = false;
