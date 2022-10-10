@@ -59,12 +59,10 @@ public class MenuController : MonoBehaviour
             PausarYDespausar();
         }
 
-        if (Input.GetKeyDown(KeyCode.O)) //HASTA ACABAR EL OBSERVE DE LOS OTROS
-        {
-            menuNormal.gameObject.SetActive(false);
-        }
-
-        
+        //if (Input.GetKeyDown(KeyCode.O)) //HASTA ACABAR EL OBSERVE DE LOS OTROS
+        //{
+        //    menuNormal.gameObject.SetActive(false);
+        //}
     }
 
     public void goToLobby() 

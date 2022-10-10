@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4346ce0d85dc5d9408fab0a7934892c4, type: 3}
   m_Name: BotonesData
   m_EditorClassIdentifier: 
-  botonesFuncionales: 0101010001000001
+  botonesFuncionales: 0101010101010101
   desactivamosBotones: 1
