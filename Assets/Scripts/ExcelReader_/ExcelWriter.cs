@@ -40,10 +40,14 @@ public class ExcelWriter : MonoBehaviour
             StringBuilder cvscontent = new StringBuilder();//para usar strings de forma no tan costosa para el sistema, por la expliocacion de nilton porque en relaidad se podria poner un string normal y tambien funiona pero boe
 
 
-            Directory.CreateDirectory(Application.streamingAssetsPath + "\\Excel_Analisis");
+            //string PathParaForlder = Application.streamingAssetsPath + "\\Excel_Analisis";
+            //Directory.CreateDirectory(PathParaForlder);
 
 
-            path = Path.Combine(Application.streamingAssetsPath, "\\Excel_Analisis", string.Format("\\{0}.csv", nombreFileInput));
+            //path = Path.Combine(Application.streamingAssetsPath, "\\Excel_Analisis", string.Format("\\{0}.csv", nombreFileInput));
+            path = Path.Combine(Application.streamingAssetsPath, @"..\..\") + string.Format("\\{0}.csv", nombreFileInput);
+
+            Debug.Log("Path del excel: " + path);
 
             File.AppendAllText(path, cvscontent.ToString());
 

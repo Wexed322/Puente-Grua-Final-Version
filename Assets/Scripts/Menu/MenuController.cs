@@ -37,8 +37,8 @@ public class MenuController : MonoBehaviour
         {
             MenuControllerInstance = this;
             DontDestroyOnLoad(this.gameObject);
-            LoadSceneEvent.eventsBeforeChangeScene += preserveThroughScenes;
-            LoadSceneEvent.eventsAfterChangeScene += startMenuController;
+            LoadSceneEvent.eventsBeforeSceneChange += preserveThroughScenes;
+            LoadSceneEvent.eventsAfterSceneChange += startMenuController;
         }
         else 
         {

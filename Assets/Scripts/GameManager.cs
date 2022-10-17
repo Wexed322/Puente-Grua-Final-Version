@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LoadSceneEvent
 {
-    public static System.Action eventsBeforeChangeScene;
-    public static System.Action eventsAfterChangeScene;
+    public static System.Action eventsBeforeSceneChange;
+    public static System.Action eventsAfterSceneChange;
 
     /*public static System.Action<string, string, string> eventoMuerteString;//eventoConparametros*/
 }
 public class GameManager : MonoBehaviour
 {
-    public List<string> objetosAveriados;
+    //public List<string> objetosAveriados;
     public static GameManager GameManagerInstance;
     public SoundManager soundManagerInstance;
     public int frames;
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
 
     //Controlar secuencia de niveles
-    public int secuencia;//si es 0 es pirque deberiamos estar en el primero nivel, pero si no estamos es porque estamos testeando un escena aislada
+    public int secuencia;//si es 0 es pirque deberia estar en el primer nivel, pero si no estamos es porque estamos testeando una escena aislada
 
     //Control GAME OVER
     public bool simulationEnd;
@@ -58,18 +58,23 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoadScene(int indexScene)
     {
-        LoadSceneEvent.eventsBeforeChangeScene?.Invoke();
+        LoadSceneEvent.eventsBeforeSceneChange?.Invoke();
         AsyncOperation op = SceneManager.LoadSceneAsync(indexScene);
-        //GameObject sliderCargaObject = menuController.InicializarMenuDeCarga(MenuCargaPrefab);
-        //Slider sliderCarga = sliderCargaObject.transform.GetChild(0).gameObject.GetComponent<Slider>();
-
 
         while (!op.isDone)
         {
             //op.float = tukson
             yield return null;
         }
-        LoadSceneEvent.eventsAfterChangeScene?.Invoke();
+        LoadSceneEvent.eventsAfterSceneChange?.Invoke();
+
+
+
+
+
+
+
+
 
 
 
