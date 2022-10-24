@@ -67,19 +67,6 @@ public class GameManager : MonoBehaviour
             yield return null;
         }
         LoadSceneEvent.eventsAfterSceneChange?.Invoke();
-
-
-
-
-
-
-
-
-
-
-
-
-        //Cuando Cargo la otra escena
     }
     public void exitSimulator() 
     {
