@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public class LoadSceneEvent
@@ -21,7 +22,8 @@ public class GameManager : MonoBehaviour
 
 
     //Controlar secuencia de niveles
-    public int secuencia;//si es 0 es pirque deberia estar en el primer nivel, pero si no estamos es porque estamos testeando una escena aislada
+    public int secuenciaNiveles;//si es 0 es pirque deberia estar en el primer nivel, pero si no estamos es porque estamos testeando una escena aislada
+    public LoadingScreenObject loadingPrefab;
 
     //Control GAME OVER
     public bool simulationEnd;
@@ -44,7 +46,7 @@ public class GameManager : MonoBehaviour
     public void loadNextScene()
     {
         //difuminado
-        secuencia++;
+        secuenciaNiveles++;
         StartCoroutine(LoadScene(SceneManager.GetActiveScene().buildIndex + 1));
     }
     public void loadScene(int index) 
@@ -52,22 +54,46 @@ public class GameManager : MonoBehaviour
         StartCoroutine(LoadScene(index));
         if (index == 0) 
         {
-            secuencia = 0;
+            secuenciaNiveles = 0;
         }
     }
 
     IEnumerator LoadScene(int indexScene)
     {
+        Instantiate(loadingPrefab);
+        yield return new WaitForSeconds(0.5f);
         LoadSceneEvent.eventsBeforeSceneChange?.Invoke();
         AsyncOperation op = SceneManager.LoadSceneAsync(indexScene);
 
         while (!op.isDone)
         {
-            //op.float = tukson
             yield return null;
         }
         LoadSceneEvent.eventsAfterSceneChange?.Invoke();
+
+
     }
+
+    /*public async void LoadScene2(int indexScene) 
+    {
+        Instantiate(prefabLoadingScreen);
+
+        LoadSceneEvent.eventsBeforeSceneChange?.Invoke();
+        AsyncOperation op = SceneManager.LoadSceneAsync(indexScene);
+        op.allowSceneActivation = false;
+
+        while (!op.isDone)
+        {
+            await Task.Delay(100);
+            prefabLoadingScreen.loadingPorcentage = op.progress;
+            yield return null;
+        }
+        await Task.Delay(1000);
+        LoadSceneEvent.eventsAfterSceneChange?.Invoke();
+        op.allowSceneActivation = true;
+    }*/
+
+
     public void exitSimulator() 
     {
         Application.Quit();

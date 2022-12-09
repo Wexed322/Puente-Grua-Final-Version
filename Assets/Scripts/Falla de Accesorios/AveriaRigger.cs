@@ -15,7 +15,7 @@ public class AveriaRigger : Averia
     {
         walk.gameObject.SetActive(false);
         base.Start();
-        if (this.fallar && GameManager.GameManagerInstance.secuencia != 0)
+        if (this.fallar && GameManager.GameManagerInstance.secuenciaNiveles != 0)
         {
             fallarFunction();
 

@@ -14,7 +14,7 @@ public class AveriaGancho : Averia
     new void Start()
     {
         base.Start();
-        if (this.fallar && GameManager.GameManagerInstance.secuencia != 0)
+        if (this.fallar && GameManager.GameManagerInstance.secuenciaNiveles != 0)
         {
             this.fallarFunction();
             this.finalizarSimulacion();
@@ -50,7 +50,7 @@ public class AveriaGancho : Averia
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (this.fallar && other.gameObject.CompareTag("Bobina")&& GameManager.GameManagerInstance.secuencia != 0) 
+        if (this.fallar && other.gameObject.CompareTag("Bobina")&& GameManager.GameManagerInstance.secuenciaNiveles != 0) 
         {
             StartCoroutine(fallaInminente());
         }

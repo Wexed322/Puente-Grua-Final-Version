@@ -1393,6 +1393,7 @@ MonoBehaviour:
   canPause: 0
   gameOverScreen_: {fileID: 6940233722404833278}
   finalScreen_: {fileID: 5190319869603825719}
+  loadingPrefab: {fileID: -5844584310403057968, guid: ce6162315d161b14f98bf327e263feb4, type: 3}
 --- !u!114 &1540985760664383860
 MonoBehaviour:
   m_ObjectHideFlags: 0

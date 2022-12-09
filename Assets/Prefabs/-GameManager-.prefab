@@ -364,11 +364,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6627adf22f638ee40840057b5edf1c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objetosAveriados: []
   soundManagerInstance: {fileID: 0}
   frames: 60
   EscenaParaActivarMenuGame: 1
-  secuencia: 0
+  secuenciaNiveles: 0
+  loadingPrefab: {fileID: -5844584310403057968, guid: ce6162315d161b14f98bf327e263feb4, type: 3}
   simulationEnd: 0
 --- !u!114 &5895322911635029020
 MonoBehaviour:

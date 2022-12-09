@@ -8,7 +8,7 @@ public class AveriaCarro : Averia
     new void Start()
     {
         base.Start();
-        if (this.fallar && GameManager.GameManagerInstance.secuencia != 0)
+        if (this.fallar && GameManager.GameManagerInstance.secuenciaNiveles != 0)
         {
             fallarFunction();
         }
